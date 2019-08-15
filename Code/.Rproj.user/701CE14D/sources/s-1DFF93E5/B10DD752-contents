@@ -1,0 +1,94 @@
+---
+title: "Data_munging"
+author: "Giulio"
+date: "12/08/2019"
+output: html_document
+---
+```{r}
+library(tidyverse)
+
+if(!"here" %in% installed.packages()){
+  install.packages("here")
+}
+
+library(here)
+setwd(here())
+
+if(!"R.matlab" %in% installed.packages()){
+  install.packages("R.matlab")
+}
+
+library(R.matlab)
+```
+
+read those pesky matlab files
+
+```{r}
+full_mat_malaria <- readMat(here("../Data/Malaria/malariaDBLaNetworks2013.mat"))
+```
+
+what do we have here?
+
+```{r}
+full_mat_malaria %>% names()
+```
+
+ok, graphs are in `mats`, I suppose, metadata in `met.CP`
+
+```{r}
+full_mat_malaria$mats %>% str()
+```
+
+Ok, that is a multi array, cool. We can just index and we are done with it.
+
+```{r}
+full_mat_malaria$mats[,, 1] %>% str()
+```
+
+We don't have names, do we? They are in `header`, I suppose, let us see if the length matches.
+
+```{r}
+full_mat_malaria$header %>% length()
+```
+so we unlist and get a character of row/col names:
+```{r}
+mala_names <- full_mat_malaria$header %>% unlist()
+```
+
+and the metadata is in `meta.XXX`
+
+```{r}
+full_mat_malaria$met.CP %>% str()
+full_mat_malaria$met.UPS %>% str()
+```
+
+In both cases we have categorical metadata, let's handle it better.
+
+```{r}
+mala_meta_df <- tibble(
+  names = mala_names,
+  CP = full_mat_malaria$met.CP,
+  UPS = full_mat_malaria$met.UPS
+)
+```
+
+save it in something meaningful
+
+```{r}
+mala_meta_df %>%
+  write_csv(path = here("../Outputs/Data/Malaria/metadata.csv"))
+```
+
+and write the matrices
+
+```{r}
+for(mat_index in 1:9){
+  temp_matrix <- full_mat_malaria$mats[,, mat_index] %>% as_tibble()
+  colnames(temp_matrix) <- mala_names
+  file_name <- paste0("adj_",mat_index,".csv")
+  temp_path <- paste0("../Outputs/Data/Malaria/",file_name)
+  write_csv(temp_matrix,here(temp_path))
+}
+```
+
+

@@ -1,0 +1,103 @@
+---
+title: "Data_munging"
+author: "Giulio"
+date: "12/08/2019"
+output: html_document
+---
+```{r}
+library(tidyverse)
+
+if(!"here" %in% installed.packages()){
+  install.packages("here")
+}
+
+library(here)
+setwd(here())
+
+if(!"R.matlab" %in% installed.packages()){
+  install.packages("R.matlab")
+}
+
+library(R.matlab)
+```
+
+read those pesky matlab files
+
+```{r}
+full_mat_law <- readMat(here("../Data/Lazega/lazega.mat"))
+```
+
+what do we have here?
+
+```{r}
+full_mat_law %>% names()
+```
+
+ok, graphs are in the `adj.`stuff, I suppose.
+
+```{r}
+adjs_names <- full_mat_law %>%
+  names() %>%
+  stringr::str_subset("adj")
+```
+
+and the metadata in `met.`stuff.
+
+```{r}
+mets_names <- full_mat_law %>%
+  names() %>%
+  stringr::str_subset("met")
+```
+
+How well formatted are the adj matrices?
+```{r}
+full_mat_law[adjs_names] %>% str()
+```
+
+Nice, they all have the same size. No names though. Let's hope they are ordered properly. We can just index and we are done with it.
+
+```{r}
+full_mat_law[mets_names] %>% str()
+```
+
+Ok, all metadata is same size, again no name, luckily same size of the adj matrices. Let's hope they are ordered.
+
+We are going to use row id as names
+
+```{r}
+lazega_meta_df <- tibble(
+  gender = full_mat_law$met.gender,
+  office = full_mat_law$met.office,
+  practice = full_mat_law$met.practice,
+  school = full_mat_law$met.school,
+  status = full_mat_law$met.status
+) %>%
+  rowid_to_column("names")
+```
+
+save it in something meaningful
+
+```{r}
+lazega_meta_df %>%
+  write_csv(path = here("../Outputs/Data/Lazega/metadata.csv"))
+```
+
+and write the matrices
+
+```{r}
+for(mat_name in adjs_names){
+  temp_matrix <- full_mat_law[[mat_name]]
+  colnames(temp_matrix) <- 1:dim(temp_matrix)[1]
+  
+  file_name <- mat_name %>%
+    str_replace("\\.","_") %>%
+    paste0(".csv")
+  temp_path <- paste0(here("../Outputs/Data/Lazega/"),file_name)
+  
+  temp_matrix %>%
+    as_tibble(.name_repair = "check_unique") %>%
+    write_csv(temp_path)
+}
+```
+
+

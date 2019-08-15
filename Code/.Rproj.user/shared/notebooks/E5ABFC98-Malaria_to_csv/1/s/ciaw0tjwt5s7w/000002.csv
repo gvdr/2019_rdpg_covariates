@@ -1,0 +1,5 @@
+"0","mala_meta_df <- tibble("
+"0","  names = mala_names,"
+"0","  CP = full_mat_malaria$met.CP,"
+"0","  UPS = full_mat_malaria$met.UPS"
+"0",")"

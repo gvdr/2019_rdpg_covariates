@@ -1,0 +1,2 @@
+"0","meta_karate %>%"
+"0","  write_csv(path = here(""../Outputs/Data/Karate/metadata.csv""))"

@@ -1,0 +1,1423 @@
+"0","library(tidyverse)"
+"0",""
+"0","if(!""here"" %in% installed.packages()){"
+"0","  install.packages(""here"")"
+"0","}"
+"0",""
+"0","library(here)"
+"0","setwd(here())"
+"2","The working directory was changed to /home/giulio/2019/Priebe/Code inside a notebook chunk. The working directory will be reset when the chunk is finished running. Use the knitr root.dir option in the setup chunk to change the working directory for notebook chunks."
+"0","if(!""tidygraph"" %in% installed.packages()){"
+"0","  devtools::install_github('thomasp85/tidygraph')"
+"0","}"
+"2","Downloading GitHub repo thomasp85/tidygraph@master
+"
+"1","These packages have more recent versions available.
+Which would you like to update?"
+"1",""
+"1","
+"
+"1",""
+"1","
+"
+"1","1: All                                          "
+"1","
+"
+"1","2: CRAN packages only                           "
+"1","
+"
+"1","3: None                                         "
+"1","
+"
+"1","4: tidyr (a0ecd2337... -> 908da2c91...) [GitHub]"
+"1","
+"
+"1",""
+"1","
+"
+"1","Enter one or more numbers, or an empty line to skip updates:"
+"1",""
+"1","
+"
+"0","3"
+"2","Installing 1 packages: igraph
+"
+"2","Installing package into ‘/home/giulio/R/x86_64-pc-linux-gnu-library/3.6’
+(as ‘lib’ is unspecified)
+"
+"2","trying URL 'https://cran.rstudio.com/src/contrib/igraph_1.2.4.1.tar.gz'
+"
+"2","Content type 'application/x-gzip'"
+"2"," length 2704004 bytes (2.6 MB)
+"
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","
+"
+"2","downloaded 2.6 MB
+
+"
+"2","* installing *source* package ‘igraph’ ...
+"
+"2","** package ‘igraph’ successfully unpacked and MD5 sums checked
+"
+"2","** using staged installation
+"
+"1","checking for gcc... "
+"1","gcc
+"
+"1","checking whether the C compiler works... "
+"1","yes
+"
+"1","checking for C compiler default output file name... a.out
+"
+"1","checking for suffix of executables... "
+"1","
+"
+"1","checking whether we are cross compiling... "
+"1","no
+"
+"1","checking for suffix of object files... "
+"1","o
+"
+"1","checking whether we are using the GNU C compiler... "
+"1","yes
+"
+"1","checking whether gcc accepts -g... "
+"1","yes
+"
+"1","checking for gcc option to accept ISO C89... "
+"1","none needed
+"
+"1","checking whether we are using the GNU Fortran compiler... "
+"1","yes
+"
+"1","checking whether gfortran accepts -g... "
+"1","yes
+"
+"1","checking whether we are using the GNU C++ compiler... "
+"1","yes
+"
+"1","checking whether g++ -std=gnu++11 accepts -g... "
+"1","yes
+"
+"1","checking how to run the C++ preprocessor... "
+"1","g++ -std=gnu++11 -E
+"
+"1","checking for rintf... "
+"1","yes
+"
+"1","checking for finite... "
+"1","yes
+"
+"1","checking for expm1... "
+"1","yes
+"
+"1","checking for rint... "
+"1","yes
+"
+"1","checking for log2... "
+"1","yes
+"
+"1","checking for logbl... "
+"1","yes
+"
+"1","checking for snprintf... "
+"1","yes
+"
+"1","checking for log1p... "
+"1","yes
+"
+"1","checking for round... "
+"1","yes
+"
+"1","checking for fmin... "
+"1","yes
+"
+"1","checking for stpcpy... "
+"1","yes
+"
+"1","checking how to run the C preprocessor... "
+"1","gcc -E
+"
+"1","checking for grep that handles long lines and -e... "
+"1","/usr/bin/grep
+"
+"1","checking for egrep... "
+"1","/usr/bin/grep -E
+"
+"1","checking for ANSI C header files... "
+"1","yes
+"
+"1","checking for sys/types.h... "
+"1","yes
+"
+"1","checking for sys/stat.h... "
+"1","yes
+"
+"1","checking for stdlib.h... "
+"1","yes
+"
+"1","checking for string.h... "
+"1","yes
+"
+"1","checking for memory.h... "
+"1","yes
+"
+"1","checking for strings.h... "
+"1","yes
+"
+"1","checking for inttypes.h... "
+"1","yes
+"
+"1","checking for stdint.h... "
+"1","yes
+"
+"1","checking for unistd.h... "
+"1","yes
+"
+"1","checking whether stpcpy is declared... "
+"1","yes
+"
+"1","checking sys/times.h usability... "
+"1","yes
+"
+"1","checking sys/times.h presence... "
+"1","yes
+"
+"1","checking for sys/times.h... yes
+"
+"1","checking net/if.h usability... "
+"1","yes
+"
+"1","checking net/if.h presence... "
+"1","yes
+"
+"1","checking for net/if.h... yes
+"
+"1","checking netinet/in.h usability... "
+"1","yes
+"
+"1","checking netinet/in.h presence... "
+"1","yes
+"
+"1","checking for netinet/in.h... "
+"1","yes
+"
+"1","checking net/if_dl.h usability... "
+"1","no
+"
+"1","checking net/if_dl.h presence... "
+"1","no
+"
+"1","checking for net/if_dl.h... "
+"1","no
+"
+"1","checking sys/sockio.h usability... "
+"1","no
+"
+"1","checking sys/sockio.h presence... "
+"1","no
+"
+"1","checking for sys/sockio.h... "
+"1","no
+"
+"1","checking sys/un.h usability... "
+"1","yes
+"
+"1","checking sys/un.h presence... "
+"1","yes
+"
+"1","checking for sys/un.h... "
+"1","yes
+"
+"1","checking sys/socket.h usability... "
+"1","yes
+"
+"1","checking sys/socket.h presence... "
+"1","yes
+"
+"1","checking for sys/socket.h... "
+"1","yes
+"
+"1","checking sys/ioctl.h usability... "
+"1","yes
+"
+"1","checking sys/ioctl.h presence... "
+"1","yes
+"
+"1","checking for sys/ioctl.h... "
+"1","yes
+"
+"1","checking sys/time.h usability... "
+"1","yes
+checking sys/time.h presence... "
+"1","yes
+"
+"1","checking for sys/time.h... "
+"1","yes
+"
+"1","checking sys/file.h usability... "
+"1","yes
+"
+"1","checking sys/file.h presence... "
+"1","yes
+"
+"1","checking for sys/file.h... "
+"1","yes
+"
+"1","checking for struct sockaddr.sa_len... "
+"1","no
+"
+"1","checking for xml2-config... "
+"1","/usr/bin/xml2-config
+"
+"1","checking for xmlSAXUserParseFile in -lxml2... "
+"1","yes
+"
+"1","checking libxml/parser.h usability... "
+"1","yes
+checking libxml/parser.h presence... "
+"1","yes
+"
+"1","checking for libxml/parser.h... "
+"1","yes
+"
+"1","checking for __gmpz_add in -lgmp... "
+"1","yes
+"
+"1","checking gmp.h usability... "
+"1","yes
+"
+"1","checking gmp.h presence... "
+"1","yes
+"
+"1","checking for gmp.h... "
+"1","yes
+"
+"1","checking for glp_read_mps in -lglpk... "
+"1","no
+"
+"1","configure: creating ./config.status
+"
+"1","config.status: creating src/Makevars.tmp
+"
+"1","config.status: creating src/Makevars
+"
+"1","config.status: creating src/config.h
+"
+"2","** libs
+"
+"1","gfortran -fno-optimize-sibling-calls  -fpic  -g -O2  -c AMD/Source/amd.f -o AMD/Source/amd.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c AMD/Source/amd_1.c -o AMD/So"
+"1","urce/amd_1.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c AMD/Source/amd_2.c -o AMD/So"
+"1","urce/amd_2.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c AMD/Source/amd_aat.c -o AMD/"
+"1","Source/amd_aat.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c AMD/Source/amd_control.c -o "
+"1","AMD/Source/amd_control.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c AMD/Source/amd_defaults.c -o"
+"1"," AMD/Source/amd_defaults.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c AMD/Source/amd_dump.c -o AMD"
+"1","/Source/amd_dump.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c AMD/Source/amd_global.c -o A"
+"1","MD/Source/amd_global.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c AMD/Source/amd_info.c -o AMD"
+"1","/Source/amd_info.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c AMD/Source/amd_order.c -o AM"
+"1","D/Source/amd_order.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c AMD/Source/amd_post_tree.c -"
+"1","o AMD/Source/amd_post_tree.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c AMD/Source/amd_postorder.c -"
+"1","o AMD/Source/amd_postorder.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c AMD/Source/amd_preprocess.c "
+"1","-o AMD/Source/amd_preprocess.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c AMD/Source/amd_valid.c -o AM"
+"1","D/Source/amd_valid.o
+"
+"1","gfortran -fno-optimize-sibling-calls  -fpic  -g -O2  -c AMD/Source/amdbar.f -o AMD/Source/amdbar.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c CHOLMOD/Check/cholmod_check."
+"1","c -o CHOLMOD/Check/cholmod_check.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c CHOLMOD/Check/cholmod_read.c"
+"1"," -o CHOLMOD/Check/cholmod_read.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c CHOLMOD/Check/cholmod_write."
+"1","c -o CHOLMOD/Check/cholmod_write.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c CHOLMOD/Cholesky/cholmod_amd"
+"1",".c -o CHOLMOD/Cholesky/cholmod_amd.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c CHOLMOD/Cholesky/cholmod_ana"
+"1","lyze.c -o CHOLMOD/Cholesky/cholmod_analyze.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c CHOLMOD/Cholesky/cholmod_col"
+"1","amd.c -o CHOLMOD/Cholesky/cholmod_colamd.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c CHOLMOD/Cholesky/cholmod_etr"
+"1","ee.c -o CHOLMOD/Cholesky/cholmod_etree.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c CHOLMOD/Cholesky/cholmod_fac"
+"1","torize.c -o CHOLMOD/Cholesky/cholmod_factorize.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c CHOLMOD/Cholesky/cholmod_pos"
+"1","torder.c -o CHOLMOD/Cholesky/cholmod_postorder.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c CHOLMOD/Cholesky/cholmod_rco"
+"1","nd.c -o CHOLMOD/Cholesky/cholmod_rcond.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c CHOLMOD/Cholesky/cholmod_res"
+"1","ymbol.c -o CHOLMOD/Cholesky/cholmod_resymbol.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c CHOLMOD/Cholesky/cholmod_row"
+"1","colcounts.c -o CHOLMOD/Cholesky/cholmod_rowcolcounts.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c CHOLMOD/Cholesky/cholmod_row"
+"1","fac.c -o CHOLMOD/Cholesky/cholmod_rowfac.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c CHOLMOD/Cholesky/cholmod_sol"
+"1","ve.c -o CHOLMOD/Cholesky/cholmod_solve.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c CHOLMOD/Cholesky/cholmod_sps"
+"1","olve.c -o CHOLMOD/Cholesky/cholmod_spsolve.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c CHOLMOD/Core/cholmod_aat.c -"
+"1","o CHOLMOD/Core/cholmod_aat.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c CHOLMOD/Core/cholmod_add.c -"
+"1","o CHOLMOD/Core/cholmod_add.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c CHOLMOD/Core/cholmod_band.c "
+"1","-o CHOLMOD/Core/cholmod_band.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c CHOLMOD/Core/cholmod_change_"
+"1","factor.c -o CHOLMOD/Core/cholmod_change_factor.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c CHOLMOD/Core/cholmod_common."
+"1","c -o CHOLMOD/Core/cholmod_common.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c CHOLMOD/Core/cholmod_complex"
+"1",".c -o CHOLMOD/Core/cholmod_complex.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c CHOLMOD/Core/cholmod_copy.c "
+"1","-o CHOLMOD/Core/cholmod_copy.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c CHOLMOD/Core/cholmod_dense.c"
+"1"," -o CHOLMOD/Core/cholmod_dense.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c CHOLMOD/Core/cholmod_error.c"
+"1"," -o CHOLMOD/Core/cholmod_error.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c CHOLMOD/Core/cholmod_factor."
+"1","c -o CHOLMOD/Core/cholmod_factor.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c CHOLMOD/Core/cholmod_memory."
+"1","c -o CHOLMOD/Core/cholmod_memory.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c CHOLMOD/Core/cholmod_sparse."
+"1","c -o CHOLMOD/Core/cholmod_sparse.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c CHOLMOD/Core/cholmod_transpo"
+"1","se.c -o CHOLMOD/Core/cholmod_transpose.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c CHOLMOD/Core/cholmod_triplet"
+"1",".c -o CHOLMOD/Core/cholmod_triplet.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c CHOLMOD/Core/cholmod_version"
+"1",".c -o CHOLMOD/Core/cholmod_version.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c CHOLMOD/MatrixOps/cholmod_dr"
+"1","op.c -o CHOLMOD/MatrixOps/cholmod_drop.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c CHOLMOD/MatrixOps/cholmod_ho"
+"1","rzcat.c -o CHOLMOD/MatrixOps/cholmod_horzcat.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c CHOLMOD/MatrixOps/cholmod_no"
+"1","rm.c -o CHOLMOD/MatrixOps/cholmod_norm.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c CHOLMOD/MatrixOps/cholmod_sc"
+"1","ale.c -o CHOLMOD/MatrixOps/cholmod_scale.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c CHOLMOD/MatrixOps/cholmod_sd"
+"1","mult.c -o CHOLMOD/MatrixOps/cholmod_sdmult.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c CHOLMOD/MatrixOps/cholmod_ss"
+"1","mult.c -o CHOLMOD/MatrixOps/cholmod_ssmult.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c CHOLMOD/MatrixOps/cholmod_su"
+"1","bmatrix.c -o CHOLMOD/MatrixOps/cholmod_submatrix.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c CHOLMOD/MatrixOps/cholmod_sy"
+"1","mmetry.c -o CHOLMOD/MatrixOps/cholmod_symmetry.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c CHOLMOD/MatrixOps/cholmod_ve"
+"1","rtcat.c -o CHOLMOD/MatrixOps/cholmod_vertcat.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c CHOLMOD/Modify/cholmod_rowad"
+"1","d.c -o CHOLMOD/Modify/cholmod_rowadd.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c CHOLMOD/Modify/cholmod_rowde"
+"1","l.c -o CHOLMOD/Modify/cholmod_rowdel.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c CHOLMOD/Modify/cholmod_updow"
+"1","n.c -o CHOLMOD/Modify/cholmod_updown.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c CHOLMOD/Partition/cholmod_ca"
+"1","md.c -o CHOLMOD/Partition/cholmod_camd.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c CHOLMOD/Partition/cholmod_cc"
+"1","olamd.c -o CHOLMOD/Partition/cholmod_ccolamd.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c CHOLMOD/Partition/cholmod_cs"
+"1","ymamd.c -o CHOLMOD/Partition/cholmod_csymamd.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c CHOLMOD/Partition/cholmod_me"
+"1","tis.c -o CHOLMOD/Partition/cholmod_metis.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c CHOLMOD/Partition/cholmod_ne"
+"1","sdis.c -o CHOLMOD/Partition/cholmod_nesdis.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c CHOLMOD/Supernodal/cholmod_s"
+"1","uper_numeric.c -o CHOLMOD/Supernodal/cholmod_super_numeric.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c CHOLMOD/Supernodal/cholmod_s"
+"1","uper_solve.c -o CHOLMOD/Supernodal/cholmod_super_solve.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c CHOLMOD/Supernodal/cholmod_s"
+"1","uper_symbolic.c -o CHOLMOD/Supernodal/cholmod_super_symbolic.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c COLAMD/Source/colamd.c -o CO"
+"1","LAMD/Source/colamd.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c COLAMD/Source/colamd_global."
+"1","c -o COLAMD/Source/colamd_global.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c DensityGrid.cpp -o DensityGrid.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c DensityGrid_3d.cpp -o DensityGrid_3d.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c NetDataTypes.cpp -o NetDataTypes.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c NetRoutines.cpp -o NetRoutines.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c SuiteSparse_config/SuiteSpar"
+"1","se_config.c -o SuiteSparse_config/SuiteSparse_config.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c adjlist.c -o adjlist.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c arpack.c -o arpack.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c array.c -o array.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c atlas.c -o atlas.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c attributes.c -o attributes.o"
+"1","
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c basic_query.c -o basic_query"
+"1",".o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c bfgs.c -o bfgs.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c bigint.c -o bigint.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c bignum.c -o bignum.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c bipartite.c -o bipartite.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c blas.c -o blas.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c bliss.cc -o bliss.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c bliss/bliss_heap.cc -o bliss/bliss_heap.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c bliss/defs.cc -o bliss/defs.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c bliss/graph.cc -o bliss/graph.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c bliss/orbit.cc -o bliss/orbit.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c bliss/partition.cc -o bliss/partition.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c bliss/uintseqhash.cc -o bliss/uintseqhash.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c bliss/utils.cc -o bliss/utils.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cattributes.c -o cattributes"
+"1",".o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c centrality.c -o centrality.o"
+"1","
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cliquer/cliquer.c -o cliquer"
+"1","/cliquer.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cliquer/cliquer_graph.c -o c"
+"1","liquer/cliquer_graph.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cliquer/reorder.c -o cliquer"
+"1","/reorder.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cliques.c -o cliques.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c clustertool.cpp -o clustertool.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cocitation.c -o cocitation.o"
+"1","
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cohesive_blocks.c -o cohesiv"
+"1","e_blocks.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c coloring.c -o coloring.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c community.c -o community.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c complex.c -o complex.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c components.c -o components.o"
+"1","
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c conversion.c -o conversion.o"
+"1","
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cores.c -o cores.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cs/cs_add.c -o cs/cs_add.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cs/cs_amd.c -o cs/cs_amd.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cs/cs_chol.c -o cs/cs_chol.o"
+"1","
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cs/cs_cholsol.c -o cs/cs_cho"
+"1","lsol.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cs/cs_compress.c -o cs/cs_co"
+"1","mpress.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cs/cs_counts.c -o cs/cs_coun"
+"1","ts.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cs/cs_cumsum.c -o cs/cs_cums"
+"1","um.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cs/cs_dfs.c -o cs/cs_dfs.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cs/cs_dmperm.c -o cs/cs_dmpe"
+"1","rm.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cs/cs_droptol.c -o cs/cs_dro"
+"1","ptol.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cs/cs_dropzeros.c -o cs/cs_d"
+"1","ropzeros.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cs/cs_dupl.c -o cs/cs_dupl.o"
+"1","
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cs/cs_entry.c -o cs/cs_entry"
+"1",".o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cs/cs_ereach.c -o cs/cs_erea"
+"1","ch.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cs/cs_etree.c -o cs/cs_etree"
+"1",".o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cs/cs_fkeep.c -o cs/cs_fkeep"
+"1",".o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cs/cs_gaxpy.c -o cs/cs_gaxpy"
+"1",".o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cs/cs_happly.c -o cs/cs_happ"
+"1","ly.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cs/cs_house.c -o cs/cs_house"
+"1",".o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cs/cs_ipvec.c -o cs/cs_ipvec"
+"1",".o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cs/cs_leaf.c -o cs/cs_leaf.o"
+"1","
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cs/cs_load.c -o cs/cs_load.o"
+"1","
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cs/cs_lsolve.c -o cs/cs_lsol"
+"1","ve.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cs/cs_ltsolve.c -o cs/cs_lts"
+"1","olve.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cs/cs_lu.c -o cs/cs_lu.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cs/cs_lusol.c -o cs/cs_lusol"
+"1",".o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cs/cs_malloc.c -o cs/cs_mall"
+"1","oc.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cs/cs_maxtrans.c -o cs/cs_ma"
+"1","xtrans.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cs/cs_multiply.c -o cs/cs_mu"
+"1","ltiply.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cs/cs_norm.c -o cs/cs_norm.o"
+"1","
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cs/cs_permute.c -o cs/cs_per"
+"1","mute.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cs/cs_pinv.c -o cs/cs_pinv.o"
+"1","
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cs/cs_post.c -o cs/cs_post.o"
+"1","
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cs/cs_print.c -o cs/cs_print"
+"1",".o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cs/cs_pvec.c -o cs/cs_pvec.o"
+"1","
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cs/cs_qr.c -o cs/cs_qr.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cs/cs_qrsol.c -o cs/cs_qrsol"
+"1",".o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cs/cs_randperm.c -o cs/cs_ra"
+"1","ndperm.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cs/cs_reach.c -o cs/cs_reach"
+"1",".o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cs/cs_scatter.c -o cs/cs_sca"
+"1","tter.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cs/cs_scc.c -o cs/cs_scc.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cs/cs_schol.c -o cs/cs_schol"
+"1",".o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cs/cs_spsolve.c -o cs/cs_sps"
+"1","olve.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cs/cs_sqr.c -o cs/cs_sqr.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cs/cs_symperm.c -o cs/cs_sym"
+"1","perm.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cs/cs_tdfs.c -o cs/cs_tdfs.o"
+"1","
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cs/cs_transpose.c -o cs/cs_t"
+"1","ranspose.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cs/cs_updown.c -o cs/cs_updo"
+"1","wn.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cs/cs_usolve.c -o cs/cs_usol"
+"1","ve.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cs/cs_util.c -o cs/cs_util.o"
+"1","
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c cs/cs_utsolve.c -o cs/cs_uts"
+"1","olve.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c decomposition.c -o decomposi"
+"1","tion.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c distances.c -o distances.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c dotproduct.c -o dotproduct.o"
+"1","
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c dqueue.c -o dqueue.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c drl_graph.cpp -o drl_graph.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c drl_graph_3d.cpp -o drl_graph_3d.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c drl_layout.cpp -o drl_layout.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c drl_layout_3d.cpp -o drl_layout_3d.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c drl_parse.cpp -o drl_parse.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c eigen.c -o eigen.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c embedding.c -o embedding.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c fast_community.c -o fast_com"
+"1","munity.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c feedback_arc_set.c -o feedba"
+"1","ck_arc_set.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c flow.c -o flow.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c foreign-dl-lexer.c -o foreig"
+"1","n-dl-lexer.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c foreign-dl-parser.c -o forei"
+"1","gn-dl-parser.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c foreign-gml-lexer.c -o forei"
+"1","gn-gml-lexer.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c foreign-gml-parser.c -o fore"
+"1","ign-gml-parser.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c foreign-graphml.c -o foreign"
+"1","-graphml.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c foreign-lgl-lexer.c -o forei"
+"1","gn-lgl-lexer.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c foreign-lgl-parser.c -o fore"
+"1","ign-lgl-parser.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c foreign-ncol-lexer.c -o fore"
+"1","ign-ncol-lexer.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c foreign-ncol-parser.c -o for"
+"1","eign-ncol-parser.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c foreign-pajek-lexer.c -o for"
+"1","eign-pajek-lexer.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c foreign-pajek-parser.c -o fo"
+"1","reign-pajek-parser.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c foreign.c -o foreign.o
+"
+"2","foreign.c: In function ‘igraph_i_gml_tostring’:
+"
+"2","foreign.c:1050:10: warning: function may return address of local variable [-Wreturn-local-addr]
+ 1050 |   return p;
+      |          ^
+foreign.c:1029:8: note: declared here
+ 1029 |   char tmp[256];
+      |        ^~~
+foreign.c:1050:10: warning: function may return address of local variable [-Wreturn-local-addr]
+ 1050 |   return p;
+      |          ^
+foreign.c:1029:8: note: declared here
+ 1029 |   char tmp[256];
+      |        ^~~
+foreign.c:1050:10: warning: function may return address of local variable [-Wr"
+"2","eturn-local-addr]
+ 1050 |   return p;
+      |          ^
+foreign.c:1029:8: note: declared here
+ 1029 |   char tmp[256];
+      |        ^~~
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c forestfire.c -o forestfire.o"
+"1","
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c fortran_intrinsics.c -o fort"
+"1","ran_intrinsics.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c games.c -o games.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c gengraph_box_list.cpp -o gengraph_box_list.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c gengraph_degree_sequence.cpp -o gengraph_degree_sequence.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c gengraph_graph_molloy_hash.cpp -o gengraph_graph_molloy_hash.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c gengraph_graph_molloy_optimized.cpp -o gengraph_graph_molloy_optimized.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c gengraph_mr-connected.cpp -o gengraph_mr-connected.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c gengraph_powerlaw.cpp -o gengraph_powerlaw.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c gengraph_random.cpp -o gengraph_random.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c glet.c -o glet.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c glpk_support.c -o glpk_suppo"
+"1","rt.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c gml_tree.c -o gml_tree.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c hacks.c -o hacks.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c heap.c -o heap.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c igraph_buckets.c -o igraph_b"
+"1","uckets.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c igraph_cliquer.c -o igraph_c"
+"1","liquer.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c igraph_error.c -o igraph_err"
+"1","or.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c igraph_estack.c -o igraph_es"
+"1","tack.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c igraph_fixed_vectorlist.c -o"
+"1"," igraph_fixed_vectorlist.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c igraph_grid.c -o igraph_grid"
+"1",".o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c igraph_hashtable.c -o igraph"
+"1","_hashtable.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c igraph_heap.c -o igraph_heap"
+"1",".o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c igraph_hrg.cc -o igraph_hrg.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c igraph_hrg_types.cc -o igraph_hrg_types.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c igraph_marked_queue.c -o igr"
+"1","aph_marked_queue.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c igraph_psumtree.c -o igraph_"
+"1","psumtree.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c igraph_set.c -o igraph_set.o"
+"1","
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c igraph_stack.c -o igraph_sta"
+"1","ck.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c igraph_strvector.c -o igraph"
+"1","_strvector.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c igraph_trie.c -o igraph_trie"
+"1",".o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c infomap.cc -o infomap.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c infomap_FlowGraph.cc -o infomap_FlowGraph.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c infomap_Greedy.cc -o infomap_Greedy.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c infomap_Node.cc -o infomap_Node.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c interrupt.c -o interrupt.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c iterators.c -o iterators.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c lad.c -o lad.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c lapack.c -o lapack.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c layout.c -o layout.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c layout_dh.c -o layout_dh.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c layout_fr.c -o layout_fr.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c layout_gem.c -o layout_gem.o"
+"1","
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c layout_kk.c -o layout_kk.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c lsap.c -o lsap.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c matching.c -o matching.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c math.c -o math.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c matrix.c -o matrix.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c maximal_cliques.c -o maximal"
+"1","_cliques.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c memory.c -o memory.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c microscopic_update.c -o micr"
+"1","oscopic_update.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c mixing.c -o mixing.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c motifs.c -o motifs.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c operators.c -o operators.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c optimal_modularity.c -o opti"
+"1","mal_modularity.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c other.c -o other.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c paths.c -o paths.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c plfit/error.c -o plfit/error"
+"1",".o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c plfit/gss.c -o plfit/gss.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c plfit/kolmogorov.c -o plfit/"
+"1","kolmogorov.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c plfit/lbfgs.c -o plfit/lbfgs"
+"1",".o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c plfit/options.c -o plfit/opt"
+"1","ions.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c plfit/plfit.c -o plfit/plfit"
+"1",".o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c plfit/zeta.c -o plfit/zeta.o"
+"1","
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c pottsmodel_2.cpp -o pottsmodel_2.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c progress.c -o progress.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c prpack.cpp -o prpack.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c prpack/prpack_base_graph.cpp -o prpack/prpack_base_graph.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c prpack/prpack_igraph_graph.cpp -o prpack/prpack_igraph_graph.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c prpack/prpack_preprocessed_ge_graph.cpp -o prpack/prpack_preprocessed_ge_graph.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c prpack/prpack_preprocessed_gs_graph.cpp -o prpack/prpack_preprocessed_gs_graph.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c prpack/prpack_preprocessed_scc_graph.cpp -o prpack/prpack_preprocessed_scc_graph.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c prpack/prpack_preprocessed_schur_graph.cpp -o prpack/prpack_preprocessed_schur_graph.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c prpack/prpack_result.cpp -o prpack/prpack_result.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c prpack/prpack_solver.cpp -o prpack/prpack_solver.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c prpack/prpack_utils.cpp -o prpack/prpack_utils.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c qsort.c -o qsort.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c qsort_r.c -o qsort_r.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c random.c -o random.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c random_walk.c -o random_walk"
+"1",".o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c sbm.c -o sbm.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c scan.c -o scan.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c scg.c -o scg.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c scg_approximate_methods.c -o"
+"1"," scg_approximate_methods.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c scg_exact_scg.c -o scg_exact"
+"1","_scg.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c scg_kmeans.c -o scg_kmeans.o"
+"1","
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c scg_optimal_method.c -o scg_"
+"1","optimal_method.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c scg_utils.c -o scg_utils.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c separators.c -o separators.o"
+"1","
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c sir.c -o sir.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c spanning_trees.c -o spanning"
+"1","_trees.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c sparsemat.c -o sparsemat.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c spectral_properties.c -o spe"
+"1","ctral_properties.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c spmatrix.c -o spmatrix.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c st-cuts.c -o st-cuts.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c statusbar.c -o statusbar.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c structural_properties.c -o s"
+"1","tructural_properties.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c structure_generators.c -o st"
+"1","ructure_generators.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c sugiyama.c -o sugiyama.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c topology.c -o topology.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c triangles.c -o triangles.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c type_indexededgelist.c -o ty"
+"1","pe_indexededgelist.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c types.c -o types.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c vector.c -o vector.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c vector_ptr.c -o vector_ptr.o"
+"1","
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c version.c -o version.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c visitors.c -o visitors.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c walktrap.cpp -o walktrap.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c walktrap_communities.cpp -o walktrap_communities.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c walktrap_graph.cpp -o walktrap_graph.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c walktrap_heap.cpp -o walktrap_heap.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c zeroin.c -o zeroin.o
+"
+"1","gfortran -fno-optimize-sibling-calls  -fpic  -g -O2  -c dgetv0.f -o dgetv0.o
+"
+"1","gfortran -fno-optimize-sibling-calls  -fpic  -g -O2  -c dlaqrb.f -o dlaqrb.o
+"
+"1","gfortran -fno-optimize-sibling-calls  -fpic  -g -O2  -c dmout.f -o dmout.o
+"
+"1","gfortran -fno-optimize-sibling-calls  -fpic  -g -O2  -c dnaitr.f -o dnaitr.o
+"
+"1","gfortran -fno-optimize-sibling-calls  -fpic  -g -O2  -c dnapps.f -o dnapps.o
+"
+"1","gfortran -fno-optimize-sibling-calls  -fpic  -g -O2  -c dnaup2.f -o dnaup2.o
+"
+"1","gfortran -fno-optimize-sibling-calls  -fpic  -g -O2  -c dnaupd.f -o dnaupd.o
+"
+"1","gfortran -fno-optimize-sibling-calls  -fpic  -g -O2  -c dnconv.f -o dnconv.o
+"
+"1","gfortran -fno-optimize-sibling-calls  -fpic  -g -O2  -c dneigh.f -o dneigh.o
+"
+"1","gfortran -fno-optimize-sibling-calls  -fpic  -g -O2  -c dneupd.f -o dneupd.o
+"
+"1","gfortran -fno-optimize-sibling-calls  -fpic  -g -O2  -c dngets.f -o dngets.o
+"
+"1","gfortran -fno-optimize-sibling-calls  -fpic  -g -O2  -c dsaitr.f -o dsaitr.o
+"
+"1","gfortran -fno-optimize-sibling-calls  -fpic  -g -O2  -c dsapps.f -o dsapps.o
+"
+"1","gfortran -fno-optimize-sibling-calls  -fpic  -g -O2  -c dsaup2.f -o dsaup2.o
+"
+"1","gfortran -fno-optimize-sibling-calls  -fpic  -g -O2  -c dsaupd.f -o dsaupd.o
+"
+"1","gfortran -fno-optimize-sibling-calls  -fpic  -g -O2  -c dsconv.f -o dsconv.o
+"
+"1","gfortran -fno-optimize-sibling-calls  -fpic  -g -O2  -c dseigt.f -o dseigt.o
+"
+"1","gfortran -fno-optimize-sibling-calls  -fpic  -g -O2  -c dsesrt.f -o dsesrt.o
+"
+"1","gfortran -fno-optimize-sibling-calls  -fpic  -g -O2  -c dseupd.f -o dseupd.o
+"
+"1","gfortran -fno-optimize-sibling-calls  -fpic  -g -O2  -c dsgets.f -o dsgets.o
+"
+"1","gfortran -fno-optimize-sibling-calls  -fpic  -g -O2  -c dsortc.f -o dsortc.o
+"
+"1","gfortran -fno-optimize-sibling-calls  -fpic  -g -O2  -c dsortr.f -o dsortr.o
+"
+"1","gfortran -fno-optimize-sibling-calls  -fpic  -g -O2  -c dstatn.f -o dstatn.o
+"
+"1","gfortran -fno-optimize-sibling-calls  -fpic  -g -O2  -c dstats.f -o dstats.o
+"
+"1","gfortran -fno-optimize-sibling-calls  -fpic  -g -O2  -c dstqrb.f -o dstqrb.o
+"
+"1","gfortran -fno-optimize-sibling-calls  -fpic  -g -O2  -c dvout.f -o dvout.o
+"
+"1","gfortran -fno-optimize-sibling-calls  -fpic  -g -O2  -c ivout.f -o ivout.o
+"
+"1","gfortran -fno-optimize-sibling-calls  -fpic  -g -O2  -c second.f -o second.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c simpleraytracer/Color.cpp -o simpleraytracer/Color.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c simpleraytracer/Light.cpp -o simpleraytracer/Light.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c simpleraytracer/Point.cpp -o simpleraytracer/Point.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c simpleraytracer/RIgraphRay.cpp -o simpleraytracer/RIgraphRay.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c simpleraytracer/Ray.cpp -o simpleraytracer/Ray.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c simpleraytracer/RayTracer.cpp -o simpleraytracer/RayTracer.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c simpleraytracer/RayVector.cpp -o simpleraytracer/RayVector.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c simpleraytracer/Shape.cpp -o simpleraytracer/Shape.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c simpleraytracer/Sphere.cpp -o simpleraytracer/Sphere.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c simpleraytracer/Triangle.cpp -o simpleraytracer/Triangle.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -DIGRAPH_THREAD_LOCAL=/**/ -DNDEBUG -Iprpack -I. -Iinclude -DPRPACK_IGRAPH_SUPPORT -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c simpleraytracer/unit_limiter.cpp -o simpleraytracer/unit_limiter.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c uuid/R.c -o uuid/R.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c uuid/clear.c -o uuid/clear.o"
+"1","
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c uuid/compare.c -o uuid/compa"
+"1","re.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c uuid/copy.c -o uuid/copy.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c uuid/gen_uuid.c -o uuid/gen_"
+"1","uuid.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c uuid/isnull.c -o uuid/isnull"
+"1",".o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c uuid/pack.c -o uuid/pack.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c uuid/parse.c -o uuid/parse.o"
+"1","
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c uuid/unpack.c -o uuid/unpack"
+"1",".o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c uuid/unparse.c -o uuid/unpar"
+"1","se.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c rinterface.c -o rinterface.o"
+"1","
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c rinterface_extra.c -o rinter"
+"1","face_extra.o
+"
+"1","gcc -I""/usr/include/R/"" -DNDEBUG   -D_FORTIFY_SOURCE=2 -DUSING_R -I. -Iinclude -Ics -Iplfit -ICHOLMOD/Include -IAMD/Include -ICOLAMD/Include -ISuiteSparse_config -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -I/usr/include/libxml2 -DNDEBUG -DNPARTITION -DNTIMER -DNCAMD -DNPRINT -DPACKAGE_VERSION=\""1.2.4\"" -DINTERNAL_ARPACK -DIGRAPH_THREAD_LOCAL=/**/ -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c lazyeval.c -o lazyeval.o
+"
+"1","g++ -std=gnu++11 -shared -L/usr/lib64/R/lib -Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now -o igraph.so AMD/Source/amd.o AMD/Source/amd_1.o AMD/Source/amd_2.o AMD/Source/amd_aat.o AMD/Source/amd_control.o AMD/Source/amd_defaults.o AMD/Source/amd_dump.o AMD/Source/amd_global.o AMD/Source/amd_info.o AMD/Source/amd_order.o AMD/Source/amd_post_tree.o AMD/Source/amd_postorder.o AMD/Source/amd_preprocess.o AMD/Source/amd_valid.o AMD/Source/amdbar.o CHOLMOD/Check/cholmod_check.o CHOLMOD/Check/cholmod_read.o CHO"
+"1","LMOD/Check/cholmod_write.o CHOLMOD/Cholesky/cholmod_amd.o CHOLMOD/Cholesky/cholmod_analyze.o CHOLMOD/Cholesky/cholmod_colamd.o CHOLMOD/Cholesky/cholmod_etree.o CHOLMOD/Cholesky/cholmod_factorize.o CHOLMOD/Cholesky/cholmod_postorder.o CHOLMOD/Cholesky/cholmod_rcond.o CHOLMOD/Cholesky/cholmod_resymbol.o CHOLMOD/Cholesky/cholmod_rowcolcounts.o CHOLMOD/Cholesky/cholmod_rowfac.o CHOLMOD/Cholesky/cholmod_solve.o CHOLMOD/Cholesky/cholmod_spsolve.o CHOLMOD/Core/cholmod_aat.o CHOLMOD/Core/cholmod_add.o CHOLMOD/Core/"
+"1","cholmod_band.o CHOLMOD/Core/cholmod_change_factor.o CHOLMOD/Core/cholmod_common.o CHOLMOD/Core/cholmod_complex.o CHOLMOD/Core/cholmod_copy.o CHOLMOD/Core/cholmod_dense.o CHOLMOD/Core/cholmod_error.o CHOLMOD/Core/cholmod_factor.o CHOLMOD/Core/cholmod_memory.o CHOLMOD/Core/cholmod_sparse.o CHOLMOD/Core/cholmod_transpose.o CHOLMOD/Core/cholmod_triplet.o CHOLMOD/Core/cholmod_version.o CHOLMOD/MatrixOps/cholmod_drop.o CHOLMOD/MatrixOps/cholmod_horzcat.o CHOLMOD/MatrixOps/cholmod_norm.o CHOLMOD/MatrixOps/cholmod_"
+"1","scale.o CHOLMOD/MatrixOps/cholmod_sdmult.o CHOLMOD/MatrixOps/cholmod_ssmult.o CHOLMOD/MatrixOps/cholmod_submatrix.o CHOLMOD/MatrixOps/cholmod_symmetry.o CHOLMOD/MatrixOps/cholmod_vertcat.o CHOLMOD/Modify/cholmod_rowadd.o CHOLMOD/Modify/cholmod_rowdel.o CHOLMOD/Modify/cholmod_updown.o CHOLMOD/Partition/cholmod_camd.o CHOLMOD/Partition/cholmod_ccolamd.o CHOLMOD/Partition/cholmod_csymamd.o CHOLMOD/Partition/cholmod_metis.o CHOLMOD/Partition/cholmod_nesdis.o CHOLMOD/Supernodal/cholmod_super_numeric.o CHOLMOD/Su"
+"1","pernodal/cholmod_super_solve.o CHOLMOD/Supernodal/cholmod_super_symbolic.o COLAMD/Source/colamd.o COLAMD/Source/colamd_global.o DensityGrid.o DensityGrid_3d.o NetDataTypes.o NetRoutines.o SuiteSparse_config/SuiteSparse_config.o adjlist.o arpack.o array.o atlas.o attributes.o basic_query.o bfgs.o bigint.o bignum.o bipartite.o blas.o bliss.o bliss/bliss_heap.o bliss/defs.o bliss/graph.o bliss/orbit.o bliss/partition.o bliss/uintseqhash.o bliss/utils.o cattributes.o centrality.o cliquer/cliquer.o cliquer/cliqu"
+"1","er_graph.o cliquer/reorder.o cliques.o clustertool.o cocitation.o cohesive_blocks.o coloring.o community.o complex.o components.o conversion.o cores.o cs/cs_add.o cs/cs_amd.o cs/cs_chol.o cs/cs_cholsol.o cs/cs_compress.o cs/cs_counts.o cs/cs_cumsum.o cs/cs_dfs.o cs/cs_dmperm.o cs/cs_droptol.o cs/cs_dropzeros.o cs/cs_dupl.o cs/cs_entry.o cs/cs_ereach.o cs/cs_etree.o cs/cs_fkeep.o cs/cs_gaxpy.o cs/cs_happly.o cs/cs_house.o cs/cs_ipvec.o cs/cs_leaf.o cs/cs_load.o cs/cs_lsolve.o cs/cs_ltsolve.o cs/cs_lu.o cs/cs"
+"1","_lusol.o cs/cs_malloc.o cs/cs_maxtrans.o cs/cs_multiply.o cs/cs_norm.o cs/cs_permute.o cs/cs_pinv.o cs/cs_post.o cs/cs_print.o cs/cs_pvec.o cs/cs_qr.o cs/cs_qrsol.o cs/cs_randperm.o cs/cs_reach.o cs/cs_scatter.o cs/cs_scc.o cs/cs_schol.o cs/cs_spsolve.o cs/cs_sqr.o cs/cs_symperm.o cs/cs_tdfs.o cs/cs_transpose.o cs/cs_updown.o cs/cs_usolve.o cs/cs_util.o cs/cs_utsolve.o decomposition.o distances.o dotproduct.o dqueue.o drl_graph.o drl_graph_3d.o drl_layout.o drl_layout_3d.o drl_parse.o eigen.o embedding.o fa"
+"1","st_community.o feedback_arc_set.o flow.o foreign-dl-lexer.o foreign-dl-parser.o foreign-gml-lexer.o foreign-gml-parser.o foreign-graphml.o foreign-lgl-lexer.o foreign-lgl-parser.o foreign-ncol-lexer.o foreign-ncol-parser.o foreign-pajek-lexer.o foreign-pajek-parser.o foreign.o forestfire.o fortran_intrinsics.o games.o gengraph_box_list.o gengraph_degree_sequence.o gengraph_graph_molloy_hash.o gengraph_graph_molloy_optimized.o gengraph_mr-connected.o gengraph_powerlaw.o gengraph_random.o glet.o glpk_support."
+"1","o gml_tree.o hacks.o heap.o igraph_buckets.o igraph_cliquer.o igraph_error.o igraph_estack.o igraph_fixed_vectorlist.o igraph_grid.o igraph_hashtable.o igraph_heap.o igraph_hrg.o igraph_hrg_types.o igraph_marked_queue.o igraph_psumtree.o igraph_set.o igraph_stack.o igraph_strvector.o igraph_trie.o infomap.o infomap_FlowGraph.o infomap_Greedy.o infomap_Node.o interrupt.o iterators.o lad.o lapack.o layout.o layout_dh.o layout_fr.o layout_gem.o layout_kk.o lsap.o matching.o math.o matrix.o maximal_cliques.o me"
+"1","mory.o microscopic_update.o mixing.o motifs.o operators.o optimal_modularity.o other.o paths.o plfit/error.o plfit/gss.o plfit/kolmogorov.o plfit/lbfgs.o plfit/options.o plfit/plfit.o plfit/zeta.o pottsmodel_2.o progress.o prpack.o prpack/prpack_base_graph.o prpack/prpack_igraph_graph.o prpack/prpack_preprocessed_ge_graph.o prpack/prpack_preprocessed_gs_graph.o prpack/prpack_preprocessed_scc_graph.o prpack/prpack_preprocessed_schur_graph.o prpack/prpack_result.o prpack/prpack_solver.o prpack/prpack_utils.o "
+"1","qsort.o qsort_r.o random.o random_walk.o sbm.o scan.o scg.o scg_approximate_methods.o scg_exact_scg.o scg_kmeans.o scg_optimal_method.o scg_utils.o separators.o sir.o spanning_trees.o sparsemat.o spectral_properties.o spmatrix.o st-cuts.o statusbar.o structural_properties.o structure_generators.o sugiyama.o topology.o triangles.o type_indexededgelist.o types.o vector.o vector_ptr.o version.o visitors.o walktrap.o walktrap_communities.o walktrap_graph.o walktrap_heap.o zeroin.o dgetv0.o dlaqrb.o dmout.o dnai"
+"1","tr.o dnapps.o dnaup2.o dnaupd.o dnconv.o dneigh.o dneupd.o dngets.o dsaitr.o dsapps.o dsaup2.o dsaupd.o dsconv.o dseigt.o dsesrt.o dseupd.o dsgets.o dsortc.o dsortr.o dstatn.o dstats.o dstqrb.o dvout.o ivout.o second.o simpleraytracer/Color.o simpleraytracer/Light.o simpleraytracer/Point.o simpleraytracer/RIgraphRay.o simpleraytracer/Ray.o simpleraytracer/RayTracer.o simpleraytracer/RayVector.o simpleraytracer/Shape.o simpleraytracer/Sphere.o simpleraytracer/Triangle.o simpleraytracer/unit_limiter.o uuid/R."
+"1","o uuid/clear.o uuid/compare.o uuid/copy.o uuid/gen_uuid.o uuid/isnull.o uuid/pack.o uuid/parse.o uuid/unpack.o uuid/unparse.o rinterface.o rinterface_extra.o lazyeval.o -lxml2 -lz -llzma -licui18n -licuuc -licudata -lm -ldl -lgmp -llapack -lblas -lgfortran -lm -lquadmath -lgfortran -lm -lquadmath -L/usr/lib64/R/lib -lR
+"
+"2","installing to /home/giulio/R/x86_64-pc-linux-gnu-library/3.6/00LOCK-igraph/00new/igraph/libs
+"
+"2","** R
+"
+"2","** demo
+"
+"2","** inst
+"
+"2","** byte-compile and prepare package for lazy loading
+"
+"2","** help
+"
+"2","*** installing help indices
+"
+"2","** building package indices
+"
+"2","** testing if installed package can be loaded from temporary location
+"
+"2","** checking absolute paths in shared objects and dynamic libraries
+"
+"2","** testing if installed package can be loaded from final location
+"
+"2","** testing if installed package keeps a record of temporary installation path
+"
+"2","* DONE (igraph)
+"
+"2","
+"
+"2",""
+"2","The downloaded source packages are in
+	‘/tmp/RtmpaiThZ0/downloaded_packages’"
+"2",""
+"2","
+"
+"1","  "
+"1","   checking for file ‘/tmp/RtmpaiThZ0/remotes33eb2e49bbb8/thomasp85-tidygraph-277ba22/DESCRIPTION’ ..."
+"1",""
+"1",""
+"1","  "
+"1","[32m✔[39m  [38;5;247mchecking for file ‘/tmp/RtmpaiThZ0/remotes33eb2e49bbb8/thomasp85-tidygraph-277ba22/DESCRIPTION’[39m[36m[39m"
+"1",""
+"1","
+"
+"1",""
+"1",""
+"1",""
+"1","  "
+"1","[38;5;247m─[39m[38;5;247m  [39m[38;5;247mpreparing ‘tidygraph’:[39m[36m[39m"
+"1",""
+"1","
+"
+"1","   checking DESCRIPTION meta-information ..."
+"1",""
+"1",""
+"1","  "
+"1","[32m✔[39m  [38;5;247mchecking DESCRIPTION meta-information[39m[36m[39m"
+"1",""
+"1","
+"
+"1","   "
+"1",""
+"1",""
+"1","  "
+"1","[38;5;247m─[39m[38;5;247m  [39m[38;5;247mcleaning src[39m[36m[39m"
+"1",""
+"1","
+"
+"1",""
+"1",""
+"1",""
+"1","  "
+"1","[38;5;247m─[39m[38;5;247m  [39m[38;5;247mchecking for LF line-endings in source and make files and shell scripts[39m[36m[39m"
+"1",""
+"1","
+"
+"1",""
+"1",""
+"1",""
+"1","  "
+"1","[38;5;247m─[39m[38;5;247m  [39m[38;5;247mchecking for empty or unneeded directories[39m[36m[39m"
+"1",""
+"1","
+"
+"1",""
+"1",""
+"1",""
+"1","  "
+"1","[38;5;247m─[39m[38;5;247m  [39m[38;5;247mbuilding ‘tidygraph_1.1.1.tar.gz’[39m[36m[39m"
+"1",""
+"1","
+"
+"1",""
+"1",""
+"1",""
+"1","  "
+"1","   "
+"1",""
+"1","
+"
+"1",""
+"1",""
+"1",""
+"2","Installing package into ‘/home/giulio/R/x86_64-pc-linux-gnu-library/3.6’
+(as ‘lib’ is unspecified)
+"
+"2","* installing *source* package ‘tidygraph’ ...
+"
+"2","** using staged installation
+"
+"2","** libs
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG  -I""/home/giulio/R/x86_64-pc-linux-gnu-library/3.6/Rcpp/include"" -D_FORTIFY_SOURCE=2  -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c RcppExports.cpp -o RcppExports.o
+"
+"1","g++ -std=gnu++11 -I""/usr/include/R/"" -DNDEBUG  -I""/home/giulio/R/x86_64-pc-linux-gnu-library/3.6/Rcpp/include"" -D_FORTIFY_SOURCE=2  -fpic  -march=x86-64 -mtune=generic -O2 -pipe -fno-plt  -c get_paths.cpp -o get_paths.o
+"
+"1","g++ -std=gnu++11 -shared -L/usr/lib64/R/lib -Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now -o tidygraph.so RcppExports.o get_paths.o -L/usr/lib64/R/lib -lR
+"
+"2","installing to /home/giulio/R/x86_64-pc-linux-gnu-library/3.6/00LOCK-tidygraph/00new/tidygraph/libs
+"
+"2","** R
+"
+"2","** byte-compile and prepare package for lazy loading
+"
+"2","** help
+"
+"2","*** installing help indices
+"
+"2","*** copying figures
+"
+"2","** building package indices
+"
+"2","** testing if installed package can be loaded from temporary location
+"
+"2","** checking absolute paths in shared objects and dynamic libraries
+"
+"2","** testing if installed package can be loaded from final location
+"
+"2","** testing if installed package keeps a record of temporary installation path
+"
+"2","* DONE (tidygraph)
+"
+"0","library(tidygraph)"
+"2","
+Attaching package: ‘tidygraph’
+
+"
+"2","The following object is masked from ‘package:stats’:
+
+    filter
+
+"

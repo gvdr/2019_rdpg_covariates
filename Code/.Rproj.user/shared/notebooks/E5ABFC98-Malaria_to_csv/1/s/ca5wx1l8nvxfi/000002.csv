@@ -1,0 +1,1 @@
+"0","mala_names <- full_mat_malaria$header %>% unlist()"

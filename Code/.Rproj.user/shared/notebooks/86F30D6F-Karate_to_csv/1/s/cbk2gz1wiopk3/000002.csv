@@ -1,0 +1,10 @@
+"0","meta_karate <- read_csv("
+"0","  here(""../Data/Karate/karate_faction.txt""),"
+"0","  col_names = ""Faction"""
+"0","  ) %>%"
+"0","  rowid_to_column(""names"")"
+"2","Parsed with column specification:
+cols(
+  Faction = [32mcol_double()[39m
+)
+"

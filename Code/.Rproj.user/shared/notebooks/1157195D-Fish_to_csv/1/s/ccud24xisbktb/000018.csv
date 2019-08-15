@@ -1,0 +1,5 @@
+"0","file <- here(""../Data/Fish/Data.Rdata"")"
+"0","""https://ndownloader.figshare.com/files/3079757"" %>%"
+"0","  curl_download(file)"
+"0",""
+"0","Data <-load(here(""../Data/Fish/Data.Rdata""))"

@@ -1,0 +1,5 @@
+"0","temp_path <- paste0(here(""../Outputs/Data/Karate/adj.csv""))"
+"0","  "
+"0","adj_karate %>%"
+"0","    as_tibble(.name_repair = ""check_unique"") %>%"
+"0","    write_csv(temp_path)"

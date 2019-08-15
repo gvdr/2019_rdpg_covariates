@@ -1,0 +1,7 @@
+"0","adj_karate <- edge_list_karate %>%"
+"0","  tbl_graph(edges = .) %>%"
+"0","  to_undirected() %>%"
+"0","  activate(""nodes"") %>%"
+"0","  arrange(as.integer(name)) %>%"
+"0","  igraph::as_adj() %>%"
+"0","  as.matrix()"

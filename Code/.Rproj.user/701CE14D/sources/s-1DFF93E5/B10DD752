@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1565571823979.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "B10DD752",
+    "lastKnownWriteTime" : 1565574102,
+    "last_content_update" : 1565574136646,
+    "path" : "~/2019/Priebe/Code/Data_from_raw/Malaria_to_csv.Rmd",
+    "project_path" : "Data_from_raw/Malaria_to_csv.Rmd",
+    "properties" : {
+        "cursorPosition" : "7,0",
+        "scrollLine" : "4",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

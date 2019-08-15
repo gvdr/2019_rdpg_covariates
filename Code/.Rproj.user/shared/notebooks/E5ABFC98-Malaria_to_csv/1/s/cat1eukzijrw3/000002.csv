@@ -1,0 +1,2 @@
+"0","mala_meta_df %>%"
+"0","  write_csv(path = here(""../Outputs/Data/Malaria/metadata.csv""))"
