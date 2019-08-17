@@ -1,0 +1,48 @@
+---
+title: "Austen_books_to_adj.Rmd"
+author: "Giulio"
+date: "8/17/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+library(widyr)
+library(janeaustenr)
+```
+
+## words as they are
+
+first we get the data into phrases, converting the text to Latin1
+
+then we use widyr to produce co-occurrances and correlations matrices for the corpus of books:
+
+for each book
+
+for the intersection of words used in each book
+
+## words as stems
+
+then we use `textclean` to clean up text.
+
+We use `textstem` to stemmatise the words
+
+then we use widyr to produce co-occurrances and correlations matrices for the corpus of books:
+
+for each book
+
+for the intersection of words used in each book
+
+## words as lems
+
+We use `textstem` to lemmatise the words
+
+then we use widyr to produce co-occurrances and correlations matrices for the corpus of books:
+
+for each book
+
+for the intersection of words used in each book
