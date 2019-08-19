@@ -1,0 +1,26 @@
+---
+title: "Austen Corpus size"
+author: "Giulio"
+date: "8/19/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+I'll try and keep track of the corpus size in a consistent way:
+
+```{r}
+library(tidyverse)
+library(vroom)
+library(here)
+
+source(here("R_src","operate_with_files.R"))
+source(here("R_src","coc_macros.R"))
+```
+
+```{r}
+fre
+```
+

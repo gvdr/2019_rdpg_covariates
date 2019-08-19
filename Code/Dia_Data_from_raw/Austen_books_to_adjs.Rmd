@@ -11,19 +11,151 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r}
 library(tidyverse)
+library(tidytext)
 library(widyr)
 library(janeaustenr)
+library(here)
+
+source(here("R_src","operate_with_files.R"))
+source(here("R_src","coc_macros.R"))
 ```
+
+## A good collection of texts
+
+```{r}
+phrases_as_is_by_book <- austen_books() %>%
+  group_by(book) %>% # we work by book
+  mutate(linenumber = row_number(), # get row numbers
+         chapter = text %>% # get chapter number
+           str_detect(
+             # luckily, they are named in the same way
+             # so we can use a regex
+             regex("^chapter [\\divxlc]",
+                   ignore_case = TRUE)
+           ) %>%
+           cumsum()
+  ) %>%
+  filter(chapter > 0) %>% # remove initial jibberish
+  filter(!text %>% # remove chapter headings
+           str_to_lower %>%
+           str_starts("chapter")) %>% 
+  summarise(text = text %>% # we produce 1 string instead of many lines
+              str_c(collapse = " ")) %>% 
+  unnest_tokens(phrase, text, # and we split by phrases
+                token =  "sentences",
+                drop = TRUE, # we get rid of origina text
+                to_lower = TRUE) %>%  # all text to lower
+  ungroup()
+
+```
+
+We may need to convert to Latin1 later on (tip read somewhere, can't remeber now).
 
 ## words as they are
 
-first we get the data into phrases, converting the text to Latin1
+We use widyr to produce co-occurrances and correlations matrices for the corpus of books:
 
-then we use widyr to produce co-occurrances and correlations matrices for the corpus of books:
+```{r}
+word_by_phrase <- phrases_as_is_by_book %>%
+ token_common()
+```
 
-for each book
+Sanity check, how many unique words in the full corpus?
 
-for the intersection of words used in each book
+```{r}
+word_by_phrase %>%
+  ungroup() %>%
+  select(word) %>%
+  unique() %>%
+  nrow()
+```
+
+Not bad. How many by book:
+
+```{r}
+word_by_phrase %>%
+  group_by(book) %>%
+  summarise(n_distinct(word))
+```
+
+#### coocurrance:
+
+```{r}
+word_by_phrase %>%
+  write_corpus_coc(folder_base = "Austen/Text_as_is/Corpus")
+```
+
+
+By default the `word_coc_by_phrase` is a redundant symmetric list: you find both "the, family, 447" and "family, the, 447". Which is ok to build the sparse matrix, I believe. But they make it huge. Let's make a couple of variants.
+
+
+XXX Better compress the files, captain.
+
+### for each book
+
+let's do it on all words
+
+```{r}
+word_by_phrase %>%
+  coc_book() %>%
+  split_and_walk_coc(folder_base = "Austen/Text_as_is")
+```
+
+### for the intersection of words used in each book
+
+
+we work on `word_by_phrase` to remove the words not in the intersection:
+
+and write them to file
+```{r}
+shared_words <- sharing_words(word_by_phrase)
+shared_word_by_phrase <- word_by_phrase %>%
+  filter(!word %in% shared_words)
+
+length(shared_words)
+
+shared_word_by_phrase %>%
+  write_corpus_coc(folder_base = "Austen/Text_as_is/Intersection")
+```
+
+
+#### phi correlation
+
+Phi correlation files tend to be huge, do only if asked
+
+```{r}
+do_phi <- FALSE
+
+if(do_phi){
+word_phi <- word_by_phrase %>%
+  pairwise_cor(word, phrase_n)
+
+word_phi %>%
+  data.table::fwrite(here("..",base_datc,"word_phi.csv.gz") %>% gzfile())
+rm(word_phi)
+
+shared_word_phi <- shared_word_by_phrase %>%
+  pairwise_cor(word, phrase_n)
+
+shared_word_phi %>%
+  write_csv(here("..",base_dati,"shared_word_phi.csv.gz") %>% gzfile())
+rm(shared_word_phi) 
+}
+```
+
+### intersection for each book?
+
+```{r}
+# bookwise_shared_word_coc <- shared_word_by_phrase %>%
+#   group_by(book) %>%
+#   nest(data = c(phrase_n, word)) %>%
+#   mutate(
+#   coc = data %>% map(pairwise_count,word, phrase_n)
+#   ) %>%
+#   select(book, coc) %>%
+#   unnest(coc)
+```
+
 
 ## words as stems
 
@@ -31,18 +163,115 @@ then we use `textclean` to clean up text.
 
 We use `textstem` to stemmatise the words
 
+```{r}
+phrases_stem_by_book <- phrases_as_is_by_book %>%
+  mutate(phrase = phrase %>%
+           textclean::replace_contraction() %>%
+           textclean::replace_money() %>%
+           textstem::stem_strings())
+```
+
+```{r}
+stem_by_phrase <- phrases_stem_by_book %>%
+  token_common()
+```
+
+```{r}
+stem_by_phrase %>%
+  group_by(book) %>%
+  summarise(n_distinct(word))
+```
+
+
 then we use widyr to produce co-occurrances and correlations matrices for the corpus of books:
+
+```{r}
+stem_by_phrase %>%
+  write_corpus_coc(folder_base = "Austen/Stemmatised/Corpus")
+```
 
 for each book
 
+```{r}
+stem_by_phrase %>%
+  coc_book() %>%
+  split_and_walk_coc(
+    folder_base = "Austen/Stemmatised")
+```
+
 for the intersection of words used in each book
+
+what is the intersection?
+
+```{r}
+shared_stems <- sharing_words(stem_by_phrase)
+shared_stem_by_phrase <- stem_by_phrase %>%
+  filter(!word %in% shared_stems)
+
+length(shared_stems)
+```
+
+
+```{r}
+shared_stem_by_phrase %>%
+  write_corpus_coc(folder_base = "Austen/Stemmatised/Intersection")
+```
+
 
 ## words as lems
 
 We use `textstem` to lemmatise the words
 
+```{r}
+phrases_lem_by_book <- phrases_as_is_by_book %>%
+  mutate(phrase = phrase %>%
+           textclean::replace_contraction() %>%
+           textclean::replace_money() %>%
+           textstem::lemmatize_strings())
+```
+
+```{r}
+lem_by_phrase <- phrases_lem_by_book %>%
+  token_common()
+```
+
+```{r}
+lem_by_phrase %>%
+  group_by(book) %>%
+  summarise(n_distinct(word))
+```
+
 then we use widyr to produce co-occurrances and correlations matrices for the corpus of books:
+
+```{r}
+lem_by_phrase %>%
+  write_corpus_coc(folder_base = "Austen/Lemmatised/Corpus")
+```
+
 
 for each book
 
-for the intersection of words used in each book
+```{r}
+lem_by_phrase %>%
+  coc_book() %>%
+  split_and_walk_coc(
+    folder_base = "Austen/Lemmatised",
+    project_base = "../Outputs/Data/DiaData/")
+```
+
+
+for the intersection of lems used in each book
+
+what is the intersection?
+
+```{r}
+shared_lems <- sharing_words(lem_by_phrase)
+
+length(shared_lems)
+
+shared_lem_by_phrase <- lem_by_phrase %>%
+  filter(!word %in% shared_lems)
+
+shared_lem_by_phrase %>%
+  write_corpus_coc(folder_base = "Austen/Lemmatised/Intersection")
+```
